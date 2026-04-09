@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 1 章 | 起步：WSL 與安裝</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=IBM+Plex+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="chapter-01.html">
+  <div class="book-layout">
+    <aside class="book-sidebar"><div class="sidebar-panel"><p class="eyebrow">Chapter 01</p><h1>起步：WSL 與安裝</h1><p class="subtitle">先建立正確觀念，再用最快方式把 WSL2 裝起來，讓 Windows 馬上多出一個 Linux 練習環境。</p><label class="search-box" for="toc-search"><span>搜尋目錄</span><input id="toc-search" type="search" placeholder="找章節、主題、實作"></label><nav class="toc" aria-label="章節目錄"><a href="index.html">封面與導讀</a><a href="chapter-01.html">01 起步：WSL 與安裝</a><a href="chapter-02.html">02 指令與套件管理</a><a href="chapter-03.html">03 實作：第一個工作區</a><a href="chapter-04.html">04 實作：工具鏈與開發流</a><a href="chapter-05.html">05 學習路線與常見錯誤</a><a href="appendix.html">附錄：速查與列印</a></nav><div class="sidebar-actions"><button type="button" class="toolbar-button" data-theme-toggle>夜間模式</button><button type="button" class="toolbar-button" data-print-page>列印 PDF</button></div></div></aside>
+    <main class="book-main">
+      <article class="page-card">
+        <header class="chapter-header"><p class="chapter-number">Chapter 01</p><h2>WSL 是什麼，為什麼它是入門 Linux 的好方式</h2><p>WSL 是 Windows Subsystem for Linux。它讓你在 Windows 裡直接執行 Linux 環境，而不必先裝雙系統或虛擬機。</p></header>
+        <section class="section-block"><h3>為什麼很多人從這裡開始</h3><div class="info-grid two"><article class="info-card"><h4>成本低</h4><p>不需要重灌、不需要分割磁碟，也不用先學一堆虛擬化設定。</p></article><article class="info-card"><h4>接近真實 Linux</h4><p>尤其是 WSL2，對命令列、開發工具與腳本練習都很夠用。</p></article></div></section>
+        <section class="section-block"><h3>最快安裝方式</h3><p>在 PowerShell 以系統管理員身分執行：</p><pre><code>wsl --install</code></pre><p>完成後重新開機。系統通常會預設安裝 Ubuntu，這對初學者最友善。</p></section>
+        <section class="section-block"><h3>第一次啟動要完成的事</h3><ol class="steps"><li>建立 Linux 使用者名稱</li><li>設定 Linux 密碼</li><li>記住這組密碼，之後輸入 <code>sudo</code> 常會用到</li></ol><div class="callout"><strong>觀念提醒：</strong> Linux 帳號與 Windows 帳號是不同的。把它想成你在另一個環境裡建立的新使用者。</div></section>
+        <footer class="page-nav"><a class="prev-link" href="index.html">回封面</a><a class="next-link" href="chapter-02.html">前往第 2 章</a></footer>
+      </article>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

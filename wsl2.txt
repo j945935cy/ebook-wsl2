@@ -1,0 +1,87 @@
+在 Windows 上用 WSL 開始學 Linux
+
+在 Windows 上用 WSL（Windows Subsystem for Linux）學 Linux，是目前入門最順、成本最低的方式之一。以下整理一套「實際可用＋教學友善」的流程。
+
+一、WSL 是什麼（先建立概念）
+WSL 是讓你在 Windows 裡直接跑 Linux 的環境
+不用雙系統、不用虛擬機
+幾乎可以當「真正 Linux」使用（特別是 WSL2）
+二、安裝 WSL（最快方式）
+開啟 PowerShell（系統管理員）
+輸入指令：
+wsl --install
+重新開機
+預設會安裝 Ubuntu（最適合初學）
+三、第一次啟動會做的事
+設定 Linux 使用者名稱
+設定密碼（Linux 用，不是 Windows）
+四、基本操作（一定要會）
+1. 常用指令
+ls → 看檔案
+cd → 切換資料夾
+pwd → 顯示目前位置
+mkdir → 建資料夾
+rm → 刪除檔案
+cp → 複製
+mv → 移動/重新命名
+2. 套件管理（Ubuntu）
+更新：
+sudo apt update
+安裝工具：
+sudo apt install git
+sudo apt install python3
+3. sudo 是什麼
+管理員權限（類似 Windows 的「系統管理員」）
+五、Windows 與 Linux 檔案互通
+Windows 磁碟在：
+/mnt/c/
+
+例如：
+
+cd /mnt/c/Users
+六、搭配 Visual Studio Code 使用（強烈建議）
+安裝 VS Code
+安裝插件：
+Remote - WSL
+
+優點：
+
+直接用 Windows 編輯器寫 Linux 程式
+Terminal 就是 Linux
+教學與開發最順
+七、學 Linux 建議路線（教學版）
+初階（1～3 天）
+熟悉基本指令（ls / cd / mkdir）
+學會安裝套件（apt）
+知道檔案路徑概念
+中階（1～2 週）
+學：
+pipe（|）
+grep（搜尋）
+nano / vim（簡單編輯）
+開始寫 bash script
+進階（2～4 週）
+學：
+權限（chmod）
+使用者（useradd）
+process（ps / top）
+簡單 server（python http server）
+八、常見新手錯誤
+把 Linux 當 Windows 用（例如找滑鼠操作）
+不熟路徑（/ 跟 \ 混淆）
+不會看錯誤訊息
+忘記用 sudo
+九、WSL vs 傳統 Linux（差異）
+項目	WSL	真 Linux
+安裝難度	非常低	中
+效能	高（WSL2）	原生
+學習用途	很適合	很適合
+系統控制	限制較多	完整
+十、結論（給教學用）
+WSL 是「學 Linux 最快入口」
+搭配 VS Code 幾乎無痛學習
+適合：
+程式初學者
+教學環境
+AI / 自動化開發
+

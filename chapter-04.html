@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 4 章 | 實作：工具鏈與開發流</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=IBM+Plex+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="chapter-04.html">
+  <div class="book-layout">
+    <aside class="book-sidebar"><div class="sidebar-panel"><p class="eyebrow">Chapter 04</p><h1>實作：工具鏈與開發流</h1><p class="subtitle">把 Linux 練習延伸到 Git、Python、Bash 和 VS Code，開始接近真正的開發節奏。</p><label class="search-box" for="toc-search"><span>搜尋目錄</span><input id="toc-search" type="search" placeholder="找章節、主題、實作"></label><nav class="toc" aria-label="章節目錄"><a href="index.html">封面與導讀</a><a href="chapter-01.html">01 起步：WSL 與安裝</a><a href="chapter-02.html">02 指令與套件管理</a><a href="chapter-03.html">03 實作：第一個工作區</a><a href="chapter-04.html">04 實作：工具鏈與開發流</a><a href="chapter-05.html">05 學習路線與常見錯誤</a><a href="appendix.html">附錄：速查與列印</a></nav><div class="sidebar-actions"><button type="button" class="toolbar-button" data-theme-toggle>夜間模式</button><button type="button" class="toolbar-button" data-print-page>列印 PDF</button></div></div></aside>
+    <main class="book-main"><article class="page-card"><header class="chapter-header"><p class="chapter-number">Chapter 04</p><h2>從練習區走向真正的開發流</h2><p>這一章把 WSL 當成日常工作環境來用，讓你從指令練習走到實際寫程式。</p></header><section class="section-block"><h3>Windows 與 Linux 檔案互通</h3><pre><code>cd /mnt/c/Users</code></pre><p>在 WSL 裡，Windows 的 C 槽通常會掛載在 <code>/mnt/c/</code>。這讓兩邊的檔案可以互相存取。</p></section><section class="info-grid three"><article class="info-card"><h3>Git 實作</h3><pre><code>sudo apt install git
+git --version
+git init</code></pre><p>先確認 Git 裝好，再在練習資料夾裡初始化一個 repo。</p></article><article class="info-card"><h3>Python 實作</h3><pre><code>sudo apt install python3
+python3 --version
+echo 'print("hi")' &gt; app.py
+python3 app.py</code></pre><p>建立第一個 Python 檔並執行，讓命令列和程式碼第一次連起來。</p></article><article class="info-card"><h3>Bash 實作</h3><pre><code>echo 'echo "run script"' &gt; hello.sh
+chmod +x hello.sh
+./hello.sh</code></pre><p>這是你第一次把一連串命令包成可重複執行的腳本。</p></article></section><section class="section-block"><h3>VS Code 最推薦的工作方式</h3><p>安裝 <code>Remote - WSL</code> 後，你就能用熟悉的編輯器直接打開 Linux 端專案。終端機、套件與執行環境都會留在 WSL 裡。</p><div class="callout soft">這種做法很適合初學者，因為你只需要適應 Linux 命令列，不必同時換掉自己熟悉的編輯器。</div></section><section class="section-block"><h3>習題與解答</h3><div class="exercise-set"><article class="exercise-item"><h4>題目 1</h4><p>為什麼在 WSL 裡輸入 <code>cd /mnt/c/Users</code> 能看到 Windows 的檔案？</p><div class="answer-block"><h5>答案</h5><p>因為 Windows 磁碟會被掛載到 WSL 的 <code>/mnt</code> 路徑下。</p><h5>解析</h5><p>這題的重點是理解 WSL 不是完全隔離的系統。它把 Windows 磁碟映射成 Linux 路徑，方便兩邊共用檔案。</p></div></article><article class="exercise-item"><h4>題目 2</h4><p><code>git init</code> 的作用是什麼？</p><div class="answer-block"><h5>答案</h5><p>在目前資料夾初始化一個 Git 倉庫。</p><h5>解析</h5><p>它不會幫你自動上傳到 GitHub，也不會建立遠端，只是先讓這個資料夾開始被 Git 管理。</p></div></article><article class="exercise-item"><h4>題目 3</h4><p>執行腳本前，為什麼需要先輸入 <code>chmod +x hello.sh</code>？</p><div class="answer-block"><h5>答案</h5><p>因為要把檔案設成可執行。</p><h5>解析</h5><p>Linux 對檔案權限比較嚴格。即使內容正確，如果沒有執行權限，直接跑 <code>./hello.sh</code> 仍可能失敗。</p></div></article></div></section><footer class="page-nav"><a class="prev-link" href="chapter-03.html">上一章</a><a class="next-link" href="chapter-05.html">前往第 5 章</a></footer></article></main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

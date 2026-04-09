@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第 5 章 | 學習路線與常見錯誤</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=IBM+Plex+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="chapter-05.html">
+  <div class="book-layout">
+    <aside class="book-sidebar">
+      <div class="sidebar-panel">
+        <p class="eyebrow">Chapter 05</p>
+        <h1>學習路線與常見錯誤</h1>
+        <p class="subtitle">把學習節奏排好，並提前避開新手最容易卡住的地方。</p>
+
+        <label class="search-box" for="toc-search">
+          <span>搜尋目錄</span>
+          <input id="toc-search" type="search" placeholder="找章節、主題、實作">
+        </label>
+
+        <nav class="toc" aria-label="章節目錄">
+          <a href="index.html">封面與導讀</a>
+          <a href="chapter-01.html">01 起步：WSL 與安裝</a>
+          <a href="chapter-02.html">02 指令與套件管理</a>
+          <a href="chapter-03.html">03 實作：第一個工作區</a>
+          <a href="chapter-04.html">04 實作：工具鏈與開發流</a>
+          <a href="chapter-05.html">05 學習路線與常見錯誤</a>
+          <a href="appendix.html">附錄：速查與列印</a>
+        </nav>
+
+        <div class="sidebar-actions">
+          <button type="button" class="toolbar-button" data-theme-toggle>夜間模式</button>
+          <button type="button" class="toolbar-button" data-print-page>列印 PDF</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="book-main">
+      <article class="page-card">
+        <header class="chapter-header">
+          <p class="chapter-number">Chapter 05</p>
+          <h2>學 Linux，不必一次學很多，但要一直有手感</h2>
+          <p>學習節奏最怕忽快忽慢。這一章幫你把前幾章的內容組成一條真的走得動的路線。</p>
+        </header>
+
+        <section class="timeline">
+          <article>
+            <span>初階｜1 到 3 天</span>
+            <p>練熟 <code>ls</code>、<code>cd</code>、<code>pwd</code>、<code>mkdir</code>，建立最基本的目錄感。</p>
+          </article>
+          <article>
+            <span>中階｜1 到 2 週</span>
+            <p>接觸 <code>grep</code>、<code>pipe</code>、文字編輯器與簡單腳本，開始把命令列當成工作工具。</p>
+          </article>
+          <article>
+            <span>進階｜2 到 4 週</span>
+            <p>進到權限、使用者、程序管理與簡單伺服器，讓 Linux 進入真正的開發場景。</p>
+          </article>
+        </section>
+
+        <section class="section-block">
+          <h3>常見錯誤</h3>
+          <ul class="plain-list">
+            <li>把 Linux 當成主要靠滑鼠操作的環境</li>
+            <li>搞混 <code>/</code> 與 <code>\</code> 的路徑邏輯</li>
+            <li>看到錯誤訊息就跳過，沒有先讀內容</li>
+            <li>需要權限時忘了加 <code>sudo</code></li>
+          </ul>
+        </section>
+
+        <section class="section-block">
+          <h3>WSL2 與傳統 Linux 的差異</h3>
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col">項目</th>
+                  <th scope="col">WSL2</th>
+                  <th scope="col">傳統 Linux</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">安裝難度</th>
+                  <td>低</td>
+                  <td>中等</td>
+                </tr>
+                <tr>
+                  <th scope="row">效能</th>
+                  <td>高，適合開發</td>
+                  <td>原生</td>
+                </tr>
+                <tr>
+                  <th scope="row">學習用途</th>
+                  <td>很適合</td>
+                  <td>很適合</td>
+                </tr>
+                <tr>
+                  <th scope="row">系統控制</th>
+                  <td>部分受限</td>
+                  <td>完整</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <h3>習題與解答</h3>
+          <div class="exercise-set">
+            <article class="exercise-item">
+              <h4>題目 1</h4>
+              <p>如果一位初學者主要想在 Windows 上學 Linux 指令與開發工具，WSL2 和傳統 Linux 誰更適合作為第一步？</p>
+              <div class="answer-block">
+                <h5>答案</h5>
+                <p>通常是 WSL2 更適合作為第一步。</p>
+                <h5>解析</h5>
+                <p>因為安裝門檻低、和 Windows 工作流整合度高，適合先把學習重點放在 Linux 本身，而不是環境折騰。</p>
+              </div>
+            </article>
+
+            <article class="exercise-item">
+              <h4>題目 2</h4>
+              <p>「看到錯誤訊息就先跳過」為什麼是常見但危險的習慣？</p>
+              <div class="answer-block">
+                <h5>答案</h5>
+                <p>因為錯誤訊息通常已經直接告訴你問題在哪裡，跳過會讓排錯變得更慢。</p>
+                <h5>解析</h5>
+                <p>Linux 學習很大一部分是建立閱讀輸出的能力。會看錯誤訊息，往往比多背幾個指令更重要。</p>
+              </div>
+            </article>
+
+            <article class="exercise-item">
+              <h4>題目 3</h4>
+              <p>如果你之後需要更完整的系統控制、伺服器部署或特定核心功能，是否可能要從 WSL2 轉向傳統 Linux？</p>
+              <div class="answer-block">
+                <h5>答案</h5>
+                <p>是，有些進階需求會更適合傳統 Linux。</p>
+                <h5>解析</h5>
+                <p>這題不是在否定 WSL2，而是在建立邊界感。WSL2 很適合學習與開發，但不代表能完全取代所有 Linux 場景。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="page-nav">
+          <a class="prev-link" href="chapter-04.html">上一章</a>
+          <a class="next-link" href="appendix.html">前往附錄</a>
+        </footer>
+      </article>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
