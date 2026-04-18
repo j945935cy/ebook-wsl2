@@ -15,9 +15,100 @@
     <main class="book-main">
       <article class="page-card">
         <header class="chapter-header"><p class="chapter-number">Chapter 01</p><h2>WSL 是什麼，為什麼它是入門 Linux 的好方式</h2><p>WSL 是 Windows Subsystem for Linux。它讓你在 Windows 裡直接執行 Linux 環境，而不必先裝雙系統或虛擬機。</p></header>
-        <section class="section-block"><h3>為什麼很多人從這裡開始</h3><div class="info-grid two"><article class="info-card"><h4>成本低</h4><p>不需要重灌、不需要分割磁碟，也不用先學一堆虛擬化設定。</p></article><article class="info-card"><h4>接近真實 Linux</h4><p>尤其是 WSL2，對命令列、開發工具與腳本練習都很夠用。</p></article></div></section>
-        <section class="section-block"><h3>最快安裝方式</h3><p>在 PowerShell 以系統管理員身分執行：</p><pre><code>wsl --install</code></pre><p>完成後重新開機。系統通常會預設安裝 Ubuntu，這對初學者最友善。</p></section>
-        <section class="section-block"><h3>第一次啟動要完成的事</h3><ol class="steps"><li>建立 Linux 使用者名稱</li><li>設定 Linux 密碼</li><li>記住這組密碼，之後輸入 <code>sudo</code> 常會用到</li></ol><div class="callout"><strong>觀念提醒：</strong> Linux 帳號與 Windows 帳號是不同的。把它想成你在另一個環境裡建立的新使用者。</div></section>
+        <section class="section-block">
+          <h3>為什麼很多人從這裡開始</h3>
+          <div class="info-grid two">
+            <article class="info-card"><h4>成本低</h4><p>不需要重灌、不需要分割磁碟，也不用先學一堆虛擬化設定。</p></article>
+            <article class="info-card"><h4>接近真實 Linux</h4><p>尤其是 WSL2，對命令列、開發工具與腳本練習都很夠用。</p></article>
+            <article class="info-card"><h4>直接與 Windows 共存</h4><p>檔案可以雙向互通，VS Code 等 Windows 程式也能直接編輯 WSL 裡的專案。</p></article>
+            <article class="info-card"><h4>效能夠用</h4><p>WSL2 採用真正的 Linux 核心，執行腳本、編譯程式的速度比 WSL1 快很多。</p></article>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <h3>WSL1 與 WSL2 的差別</h3>
+          <p>現在安裝預設就是 WSL2，但你可以用以下指令確認：</p>
+          <pre><code>wsl --list --verbose</code></pre>
+          <p>輸出的 <code>VERSION</code> 欄位如果顯示 <code>2</code>，代表已經是 WSL2。WSL2 使用真正的 Linux 核心，相容性與效能都更好，建議維持預設即可。</p>
+        </section>
+
+        <section class="section-block">
+          <h3>安裝前的條件確認</h3>
+          <ul class="plain-list">
+            <li>Windows 10 版本 2004 以上（組建 19041+），或 Windows 11</li>
+            <li>已開啟「虛擬化」支援（通常預設開啟，BIOS 層級設定）</li>
+            <li>有系統管理員權限可以執行 PowerShell</li>
+          </ul>
+          <div class="callout soft">不確定 Windows 版本？按 <code>Win + R</code>，輸入 <code>winver</code> 即可查看。</div>
+        </section>
+
+        <section class="section-block">
+          <h3>最快安裝方式</h3>
+          <p>在 PowerShell 以系統管理員身分執行：</p>
+          <pre><code>wsl --install</code></pre>
+          <p>完成後重新開機。系統通常會預設安裝 Ubuntu，這對初學者最友善。</p>
+          <div class="callout">若想指定其他發行版，可以先查詢可用清單：<pre><code>wsl --list --online</code></pre>再用 <code>wsl --install -d &lt;發行版名稱&gt;</code> 安裝，例如 <code>wsl --install -d Debian</code>。</div>
+        </section>
+
+        <section class="section-block">
+          <h3>第一次啟動要完成的事</h3>
+          <ol class="steps">
+            <li>建立 Linux 使用者名稱（只能小寫英文，不能含空格）</li>
+            <li>設定 Linux 密碼（輸入時不會顯示字元，這是正常現象）</li>
+            <li>記住這組密碼，之後輸入 <code>sudo</code> 常會用到</li>
+          </ol>
+          <div class="callout"><strong>觀念提醒：</strong> Linux 帳號與 Windows 帳號是不同的。把它想成你在另一個環境裡建立的新使用者。</div>
+        </section>
+
+        <section class="section-block">
+          <h3>安裝後馬上確認環境正常</h3>
+          <p>啟動 Ubuntu 後，依序輸入以下指令確認基本功能沒問題：</p>
+          <pre><code>uname -r
+cat /etc/os-release
+sudo apt update</code></pre>
+          <ul class="plain-list">
+            <li><code>uname -r</code>：顯示 Linux 核心版本，確認 WSL2 核心已載入</li>
+            <li><code>cat /etc/os-release</code>：顯示 Linux 發行版資訊</li>
+            <li><code>sudo apt update</code>：更新套件清單，確認網路與 sudo 正常</li>
+          </ul>
+        </section>
+
+        <section class="section-block">
+          <h3>習題與解答</h3>
+          <div class="exercise-set">
+            <article class="exercise-item">
+              <h4>題目 1</h4>
+              <p>WSL2 和 WSL1 最主要的差別是什麼？</p>
+              <div class="answer-block">
+                <h5>答案</h5>
+                <p>WSL2 使用真正的 Linux 核心，WSL1 只是翻譯 Linux 系統呼叫。</p>
+                <h5>解析</h5>
+                <p>WSL2 的相容性更高、效能更好，幾乎可以當成完整的 Linux 環境使用。日常學習建議直接用 WSL2。</p>
+              </div>
+            </article>
+            <article class="exercise-item">
+              <h4>題目 2</h4>
+              <p>安裝完 WSL2 後，要怎麼確認它的版本是 2 而不是 1？</p>
+              <div class="answer-block">
+                <h5>答案</h5>
+                <p>在 PowerShell 輸入 <code>wsl --list --verbose</code>，查看 <code>VERSION</code> 欄位。</p>
+                <h5>解析</h5>
+                <p>這個指令也會列出所有已安裝的 Linux 發行版與它們目前的執行狀態。</p>
+              </div>
+            </article>
+            <article class="exercise-item">
+              <h4>題目 3</h4>
+              <p>設定 Linux 密碼時，輸入字元都沒有顯示，這是出錯了嗎？</p>
+              <div class="answer-block">
+                <h5>答案</h5>
+                <p>不是，這是 Linux 的正常安全機制。</p>
+                <h5>解析</h5>
+                <p>Linux 終端機在輸入密碼時刻意不顯示任何字元（包含小點），目的是避免旁觀者看出密碼長度。正常輸入完成後按 Enter 即可。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
         <footer class="page-nav"><a class="prev-link" href="index.html">回封面</a><a class="next-link" href="chapter-02.html">前往第 2 章</a></footer>
       </article>
     </main>
